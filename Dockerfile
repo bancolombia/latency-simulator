@@ -13,6 +13,6 @@ RUN mix release
 FROM elixir:1.14.4-alpine
 WORKDIR /app
 COPY --from=builder /app/_build/prod .
-#COPY config /app/config
-#VOLUME /app/config/
+COPY config /app/config
+VOLUME /app/config/
 ENTRYPOINT exec rel/latency_simulator/bin/latency_simulator start
