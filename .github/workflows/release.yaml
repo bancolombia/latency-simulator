@@ -2,6 +2,7 @@ name: Deploy Image
 on:
   release:
     types: [ published ]
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,6 +25,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64
           push: true
-          tags: bancolombia/latency-simulator:${GITHUB_REF##*/}
+          tags: bancolombia/latency-simulator:${{ github.ref_name }}
