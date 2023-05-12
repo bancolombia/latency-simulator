@@ -6,7 +6,8 @@ config :git_hooks,
     pre_commit: [
       verbose: true,
       tasks: [
-        {:file, "./hooks/mix_format"}
+        {:file, "./hooks/mix_format"},
+        {:file, "./hooks/mix_test"}
       ]
     ]
   ]
