@@ -1,0 +1,30 @@
+name: Build
+on: [push, pull_request]
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: erlef/setup-beam@v1.15.2
+        with:
+          otp-version: '25'
+          elixir-version: '1.14'
+
+      - run: |
+          mix local.hex --force
+          mix local.rebar --force
+          mix deps.clean --unused
+          mix deps.get
+          mix deps.compile
+        name: Compile Dependencies
+
+      - run: |
+          MIX_ENV=test mix test --cover --color
+        name: Run Tests
+
+      - run: |
+          MIX_ENV=prod mix release
+        name: Compile
