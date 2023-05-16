@@ -30,4 +30,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64,linux/arm64/v8
           push: true
-          tags: bancolombia/latency-simulator:${{ github.ref_name }}
+          tags: bancolombia/latency-simulator:test
