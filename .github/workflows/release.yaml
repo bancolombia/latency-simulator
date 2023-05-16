@@ -3,6 +3,9 @@ on:
   release:
     types: [ published ]
 
+permissions:
+  contents: read
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,6 +26,18 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@v4
+        if: "!github.event.release.prerelease"
+        with:
+          context: .
+          platforms: linux/amd64
+          push: true
+          tags: |
+            bancolombia/latency-simulator:latest
+            bancolombia/latency-simulator:${{ github.ref_name }}
+
+      - name: Build and push - prerelease
+        uses: docker/build-push-action@v4
+        if: "github.event.release.prerelease"
         with:
           context: .
           platforms: linux/amd64
