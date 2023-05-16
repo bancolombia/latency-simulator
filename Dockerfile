@@ -5,8 +5,8 @@ RUN apk add build-base \
     && mix local.hex --force \
     && mix local.rebar --force
 COPY mix.exs mix.lock .
-RUN mix deps.get \
-    && mix deps.compile
+RUN mix deps.get
+RUN mix deps.compile
 COPY . .
 RUN mix release
 
