@@ -33,8 +33,8 @@ docker run --rm -it -p 8080:8080 bancolombia/latency-simulator:latest
 Now, this tool expose an endpoint that allows you to simulate latency, with time in milliseconds as a parameter.
 
 ```bash 
-curl http://localhost:8080/wait?100 # It'll wait 100 milliseconds
-curl http://localhost:8080/wait?3000 # It'll wait 3 seconds
+curl http://localhost:8080/wait/100 # It'll wait 100 milliseconds
+curl http://localhost:8080/wait/3000 # It'll wait 3 seconds
 ```
 
 ![wait-100.png](.github/img/wait-100.png)
