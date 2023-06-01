@@ -7,7 +7,7 @@ config :git_hooks,
       verbose: true,
       tasks: [
         {:file, "./hooks/mix_format"},
-        #        {:mix_task, :format, ["--check-formatted", "--dry-run"]},
+        {:mix_task, :format, ["--check-formatted", "--dry-run"]},
         {:mix_task, :test, ["--color", "--cover"]},
         {:mix_task, :credo,
          [
