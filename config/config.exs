@@ -26,4 +26,7 @@ if Mix.env() == :test do
   config :git_hooks, current_branch_fn: fn -> {"main\n", 0} end
 end
 
+config :latency_simulator,
+  file_parser_behaviour: LatencySimulator.Infrastructure.Adapters.FileSystem
+
 import_config "#{Mix.env()}.exs"

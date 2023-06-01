@@ -31,6 +31,7 @@ defmodule LatencySimulator.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:yaml_elixir, "~> 2.9"},
       {:ex_unit_sonarqube, "~> 0.1", only: :test},
       {:sobelow, "~> 0.11", only: :dev},
       {:credo_sonarqube, "~> 0.1"},
