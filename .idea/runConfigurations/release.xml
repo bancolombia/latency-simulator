@@ -1,0 +1,14 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="release" type="MixRunConfigurationType" factoryName="Elixir Mix">
+    <module name="latency-simulator" />
+    <mix>
+      <argument>release</argument>
+    </mix>
+    <envs>
+      <env name="MIX_ENV" value="prod" />
+    </envs>
+    <module name="latency-simulator" />
+    <module-filters inherit-application-module-filters="true" />
+    <method v="2" />
+  </configuration>
+</component>

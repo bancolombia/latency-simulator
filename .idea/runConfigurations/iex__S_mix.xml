@@ -1,0 +1,12 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="iex -S mix" type="org.elixir_lang.iex.configuration.ConfigurationType" factoryName="IEx">
+    <iex>
+      <argument>-S</argument>
+      <argument>mix</argument>
+    </iex>
+    <module-filters inherit-application-module-filters="true" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

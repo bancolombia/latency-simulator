@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="hex.outdated" type="MixRunConfigurationType" factoryName="Elixir Mix">
+    <module name="latency_simulator" />
+    <mix>
+      <argument>hex.outdated</argument>
+    </mix>
+    <module name="latency_simulator" />
+    <module-filters inherit-application-module-filters="true" />
+    <method v="2" />
+  </configuration>
+</component>
