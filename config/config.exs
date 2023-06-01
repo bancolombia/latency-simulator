@@ -22,4 +22,8 @@ config :git_hooks,
     ]
   ]
 
+if Mix.env() == :test do
+  config :git_hooks, current_branch_fn: fn -> {"main\n", 0} end
+end
+
 import_config "#{Mix.env()}.exs"
