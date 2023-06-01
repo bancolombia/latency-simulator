@@ -29,6 +29,7 @@ jobs:
         if: "!github.event.release.prerelease"
         with:
           context: .
+          file: resources/docker/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |

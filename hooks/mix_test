@@ -1,3 +1,0 @@
-#!/bin/bash
-
-mix test --color --cover
