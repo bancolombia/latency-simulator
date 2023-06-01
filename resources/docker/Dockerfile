@@ -9,8 +9,7 @@ RUN apk update --no-cache && \
 RUN mix local.hex --force && \
     mix local.rebar --force
 COPY mix.exs mix.lock ./
-RUN mix deps.get && \
-    mix deps.compile
+RUN mix do deps.get, deps.compile
 COPY . ./
 RUN mix release
 
